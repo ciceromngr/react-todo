@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
 import { FiCircle, FiCheckCircle, FiDelete } from "react-icons/fi";
 
 import api from '../../services/api';
 
-import { Title, Form, ErrorMessage, Tasks, Header } from './styles';
+import Header from '../../components/Header';
+import Input from '../../components/Input';
 
-import logoImg from '../../assets/logo.png';
+import { Form, ErrorMessage, Tasks } from './styles';
+
 
 const Tarefas = () => {
   const [tasks, setTasks] = useState([]);
@@ -73,32 +74,16 @@ const Tarefas = () => {
 
   return (
     <>
-      <Header>
-        <img src={logoImg} alt="" />
-
-        <ul>
-          <li>
-            <Link to='/dashboard'>
-              Dashboard
-            </Link>
-          </li>
-          <li>
-            <Link to='/tarefas'>
-              Tarefas
-            </Link>
-          </li>
-        </ul>
-      </Header>
-
-      <Title>Lista de Tarefas</Title>
+      <Header title="Lista de Tarefas" />
 
       <Form onSubmit={handleAddTask}>
-        <input 
+        <Input 
           value={newTask} 
           onChange={e => setNewTask(e.target.value)}
           type="text"
           placeholder="Digite a nova tarefa aqui..." 
         />
+
         <button type="submit">Criar</button>
       </Form>
 

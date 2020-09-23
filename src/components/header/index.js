@@ -21,13 +21,13 @@ const Header = ({title}) => {
             </Link>
           </li>
           <li>
-          <Link to='/tarefas'>
+            <Link to='/tarefas'>
               Tarefas
             </Link>
           </li>
           <li>
           <Link to='/'>
-              logout
+              Logout
             </Link>
           </li>
         </ul>

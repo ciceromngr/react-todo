@@ -1,40 +1,6 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
 
-export const Header = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 40px;
-
-  ul {
-    display: flex;
-    list-style: none;
-
-    li {
-      font-size: 14px;
-
-      & + li{
-        margin-left: 15px;
-      }
-
-      a {
-        color: #333;
-        text-decoration: none;
-
-        &:hover {
-          color: #04d361;
-        }
-      }
-    }
-  }
-`;
-
-export const Title = styled.h1`
-  font-size: 36px;
-  color: #3a3a3a;
-`;
-
 export const Form = styled.form`
   margin-top: 25px;
   max-width: 700px;
@@ -86,7 +52,7 @@ export const Tasks = styled.div`
     text-decoration: none;
     display: flex;
     align-items: center;
-    transition: transform 0.5s;
+    transition: border-color 0.3s linear 0.1s ,transform 0.3s;
 
     & + div{
       margin-top: 16px;
@@ -94,6 +60,7 @@ export const Tasks = styled.div`
 
     &:hover{
       transform: translateX(10px);
+      border-bottom: 2px solid #04d361;
     }
 
     strong{
